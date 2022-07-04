@@ -2,13 +2,13 @@
     {
         "id": 1,
         "name": "Nature",
-        "price": 56.90,
+        "price": 52.50,
         "imgUrl": "/imgs/naturedead.jpg"
     },
     {
         "id": 2,
         "name": "Beach",
-        "price": 1209.99,
+        "price": 1209.90,
         "imgUrl": "/imgs/wall_beach1.jpg"
     },
     {
@@ -16,5 +16,42 @@
         "name": "Savage",
         "price": 2300.10,
         "imgUrl": "/imgs/brightforest.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Laguna Verde (Bolivia)",
+        "price": 77.40,
+        "imgUrl": "/imgs/laguna_verde.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Saoseo (Switzerland)",
+        "price": 59.00,
+        "imgUrl": "/imgs/saoseo.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Fjord (Norway)",
+        "price": 102.20,
+        "imgUrl": "/imgs/fjord.jpg"
+    },
+    {
+        "id": 7,
+        "name": "Laguna Colorada (Bolivia)",
+        "price": 1722.30,
+        "imgUrl": "/imgs/laguna_colorada.jpg"
+    },
+    {
+        "id": 8,
+        "name": "Geyzer (USA)",
+        "price": 1399.60,
+        "imgUrl": "/imgs/geyzer.jpg"
+    },
+    {
+        "id": 9,
+        "name": "Tropical",
+        "price": 3499.90,
+        "imgUrl": "/imgs/tropic.jpg"
     }
+
 ]
