@@ -12,3 +12,9 @@ package-name: shopping-cart
 npm install
 
 npm run dev
+
+npm install react-router-dom
+
+npm install bootstrap react-bootstrap
+
+
