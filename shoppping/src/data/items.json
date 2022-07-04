@@ -1,20 +1,20 @@
 [
-	{
-		"id": 1,
-		"name": "Book",
-		"price": 10.99,
-		"imgUrl": "/imgs/naturedead.jpg"
-	},
-	{
-		"id": 2,
-		"name": "Book",
-		"price": 10.99,
-		"imgUrl": "/imgs/greentree.jpg"
-	},
-	{
-		"id": 3,
-		"name": "Book",
-		"price": 10.99,
-		"imgUrl": "/imgs/brightforest.jpg"
-	},
+    {
+        "id": 1,
+        "name": "Nature",
+        "price": 56.90,
+        "imgUrl": "/imgs/naturedead.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Beach",
+        "price": 1209.99,
+        "imgUrl": "/imgs/wall_beach1.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Savage",
+        "price": 2300.10,
+        "imgUrl": "/imgs/brightforest.jpg"
+    }
 ]
