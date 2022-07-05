@@ -2,19 +2,19 @@
     {
         "id": 1,
         "name": "Nature",
-        "price": 52.50,
+        "price": 50.10,
         "imgUrl": "/imgs/naturedead.jpg"
     },
     {
         "id": 2,
         "name": "Beach",
-        "price": 1209.90,
+        "price": 70.00,
         "imgUrl": "/imgs/wall_beach1.jpg"
     },
     {
         "id": 3,
         "name": "Savage",
-        "price": 2300.10,
+        "price": 49.50,
         "imgUrl": "/imgs/brightforest.jpg"
     },
     {
