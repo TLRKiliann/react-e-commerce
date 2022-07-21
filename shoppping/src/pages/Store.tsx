@@ -19,4 +19,5 @@ export function Store() {
 
 /*
 <Col>{JSON.stringify(item)}</Col>
+<StoreItem {...item} /> fait passer tous les items.
 */

@@ -1,14 +1,20 @@
 import { Button, Container, Nav, Navbar as NavbarBs } from "react-bootstrap"
 import { NavLink } from "react-router-dom"
 //import '../utilities/shopping-cart-svgrepo-com.svg'
+import {useState} from "react";
 import { useShoppingCart } from "../context/ShoppingCartContext"
+//import { useAuthProvider } from "../context/AuthProvider"
+
 
 export function Navbar() {
-  const {openCart, cartQuantity} = useShoppingCart()
+  const { openCart, cartQuantity } = useShoppingCart();
+
+  const [openLogin, setOpenLogin] = useState(true)
+
   return (
     <NavbarBs className="bg-white shadow-sm mb-3">
       <Container>
-        <Nav className="me-auto">
+        <Nav className="me-auto h5">
           <Nav.Link to="/" as={NavLink}>
             Home
           </Nav.Link>
@@ -18,7 +24,59 @@ export function Navbar() {
           <Nav.Link to="/about" as={NavLink}>
             About
           </Nav.Link>
+          <Nav.Link to="/subscribe" as={NavLink}>
+            Subscribe
+          </Nav.Link>
         </Nav>
+
+        {openLogin ? (
+
+          <button
+            onClick={(e) => setOpenLogin(!openLogin)}
+            style={{
+              marginRight: "20px",
+              width: "55px", 
+              height: "55px", 
+              position: "relative", 
+              display: "flex", 
+              alignItems: "center",
+              justifyContent: "center",
+              fontSize: "0.8rem",
+              color: "black", 
+              border: "1px solid grey"
+            }}
+            variant="outline-primary"
+            className="rounded-circle"
+          >
+            Login
+          </button>
+
+          ) : (
+
+          <button
+            onClick={(e) => setOpenLogin(!openLogin)}
+            style={{
+              marginRight: "20px",
+              width: "55px", 
+              height: "55px", 
+              position: "relative", 
+              display: "flex", 
+              alignItems: "center",
+              justifyContent: "center",
+              fontSize: "0.8rem",
+              color: "black", 
+              border: "1px solid grey"
+            }}
+            variant="outline-primary"
+            className="rounded-circle"
+          >
+            Logout
+          </button>
+
+        )}
+
+
+
         {cartQuantity > 0 && (
           <Button
             onClick={openCart} 
