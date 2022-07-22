@@ -1,0 +1,106 @@
+:root {
+    --bs-font-one: One-serif;
+    --bs-font-ch:  Helvetica;
+    --bs-light: #ecdecd;;
+    --bs-grey: grey;
+    --bs-white: #ffffff;
+    --bs-orange: orange;
+}
+
+/*
+  --bs-font-one: Arial, Roboto, Helvetica, Poppins, sans-serif;
+
+body,
+html {
+  font-family: Arial, Roboto, Helvetica, Poppins, sans-serif;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: local('Poppins'), url(./fonts/Poppins-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 900;
+  src: local('Poppins'), url(./fonts/Poppins-Bold.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 900;
+  src: local('Poppins'), url(./fonts/Poppins-Black.ttf) format('truetype');
+}
+*/
+
+body {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    background: var(--bs-light);
+}
+
+/*Subscript/login/signin*/
+.form--logsign {
+    margin: auto;
+    margin-top: 10%;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.input--logsign {
+    margin: 5px 0px;
+}
+
+.btn--submit {
+    width: 25%;
+    margin-top: 10px;
+    border-radius: 15px;
+}
+
+.btn--submit:hover {
+    background: var(--bs-grey);
+    color: var(--bs-white);
+}
+
+.btn--submit:active {
+    background: var(--bs-white);
+    color: var(--bs-orange);
+}
+
+.main--div {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn--bloc {
+    margin: auto;
+    width: 90%;
+    display: flex;
+    justify-content: right;
+}
+
+.btn--logsign {
+    width: 60px;
+    height: 60px;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    border-radius: 50% 50%;
+}
+
+.btn--logsign:hover {
+    background: var(--bs-grey);
+    color: var(--bs-white);
+}
+
+.btn--logsign:active {
+    background: var(--bs-white);
+    color: orange;
+}
+
+#btn--login {
+    margin-right: 10px;
+}

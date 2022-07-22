@@ -1,6 +1,7 @@
 import React, { useState } from "react"
-import Login from "./componentSubscribe/Login"
-import SignUp from "./componentSubscribe/SignUp"
+import Login from "../components/Login"
+import SignUp from "../components/SignUp"
+import { useAuthLogin } from "../context/AuthContextProvider"
 import "./styles.css"
 
 
@@ -17,7 +18,8 @@ export const Subscribe = () => {
         setSign(prevSign => !prevSign.sign);
         setLog(log => log = false);
     };
-
+    const turnLogin = useAuthLogin();
+    console.log(turnLogin)
     return (
         <div className="main--div">
 

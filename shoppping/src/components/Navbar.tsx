@@ -1,38 +1,45 @@
 import { Button, Container, Nav, Navbar as NavbarBs } from "react-bootstrap"
 import { NavLink } from "react-router-dom"
 //import '../utilities/shopping-cart-svgrepo-com.svg'
-import {useState} from "react";
+import React, { useState } from "react";
 import { useShoppingCart } from "../context/ShoppingCartContext"
-//import { useAuthProvider } from "../context/AuthProvider"
+import { useAuthLogin } from "../context/AuthContextProvider"
 
 
 export function Navbar() {
-  const { openCart, cartQuantity } = useShoppingCart();
+  const { openCart, cartQuantity } = useShoppingCart()
 
-  const [openLogin, setOpenLogin] = useState(true)
+  const { turnLogin, setTurnLogin } = useAuthLogin()
+  const [switchLog, setSwitchLog] = useState<boolean>(false)
 
+  console.log(turnLogin)
   return (
     <NavbarBs className="bg-white shadow-sm mb-3">
       <Container>
         <Nav className="me-auto h5">
-          <Nav.Link to="/" as={NavLink}>
+          <Nav.Link to="/" as={NavLink}
+            style={{marginRight: "20px"}}>
             Home
           </Nav.Link>
-          <Nav.Link to="/store" as={NavLink}>
+          <Nav.Link to="/store" as={NavLink}
+            style={{marginRight: "20px"}}>
             Store
           </Nav.Link>
-          <Nav.Link to="/about" as={NavLink}>
+          <Nav.Link to="/about" as={NavLink}
+            style={{marginRight: "20px"}}>
             About
           </Nav.Link>
-          <Nav.Link to="/subscribe" as={NavLink}>
+          <Nav.Link to="/subscribe" as={NavLink}
+            style={{marginRight: "20px"}}>
             Subscribe
           </Nav.Link>
         </Nav>
 
-        {openLogin ? (
 
-          <button
-            onClick={(e) => setOpenLogin(!openLogin)}
+        {!switchLog ? (
+          <Nav.Link
+            to="/subscribe" as={NavLink}
+            onClick={() => setSwitchLog(switchLog)}
             style={{
               marginRight: "20px",
               width: "55px", 
@@ -49,12 +56,12 @@ export function Navbar() {
             className="rounded-circle"
           >
             Login
-          </button>
+          </Nav.Link>
 
-          ) : (
+          ):(
 
           <button
-            onClick={(e) => setOpenLogin(!openLogin)}
+            onClick={() => setSwitchLog(!switchLog)}
             style={{
               marginRight: "20px",
               width: "55px", 
@@ -72,9 +79,7 @@ export function Navbar() {
           >
             Logout
           </button>
-
         )}
-
 
 
         {cartQuantity > 0 && (

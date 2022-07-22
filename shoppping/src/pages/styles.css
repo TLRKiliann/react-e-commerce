@@ -40,72 +40,6 @@ body {
     background: var(--bs-light);
 }
 
-/*Subscript/login/signin*/
-.form--logsign {
-    margin: auto;
-    margin-top: 10%;
-    width: 60%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.input--logsign {
-    margin: 5px 0px;
-}
-
-.btn--submit {
-    width: 25%;
-    margin-top: 10px;
-    border-radius: 15px;
-}
-
-.btn--submit:hover {
-    background: var(--bs-grey);
-    color: var(--bs-white);
-}
-
-.btn--submit:active {
-    background: var(--bs-white);
-    color: var(--bs-orange);
-}
-
-.main--div {
-    display: flex;
-    flex-direction: column;
-}
-
-.btn--bloc {
-    margin: auto;
-    width: 90%;
-    display: flex;
-    justify-content: right;
-}
-
-.btn--logsign {
-    width: 60px;
-    height: 60px;
-    margin-top: 20px;
-    font-size: 0.9rem;
-    border-radius: 50% 50%;
-}
-
-.btn--logsign:hover {
-    background: var(--bs-grey);
-    color: var(--bs-white);
-}
-
-.btn--logsign:active {
-    background: var(--bs-white);
-    color: orange;
-}
-
-#btn--login {
-    margin-right: 10px;
-}
-
-
 /*Home Page*/
 .main--home {
     width: 100%;
@@ -147,7 +81,7 @@ body {
 
 .home--sec h1 {
     font-family: 'Roboto', sans-serif;
-    color: dodgerblue;
+    color: black;
 
     animation-name: title;
     animation-delay: 0s;
@@ -158,7 +92,7 @@ body {
 
 .home--sec h3 {
     font-family: 'Helvetica';
-    color: green;
+    color: dodgerblue;
 
     opacity: 1;
     animation-name: secondtitle;
@@ -168,7 +102,12 @@ body {
 }
 
 .color--sun {
+    margin-bottom: 20px;
     color: orange;
+}
+
+.color--palmer {
+    color: green;
 }
 
 @keyframes secondtitle {
@@ -214,11 +153,18 @@ body {
     margin: auto;
     margin-top: 20px;
     padding: 10px 20px;
-    
+
     border: 1px solid var(--bs-light);
     border-radius: 10px;
     box-shadow: 0px 0px 7px black;
     background: var(--bs-white);
+}
+
+.home--third h3 {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    font-size: 1.4rem;
 }
 
 .art--title {

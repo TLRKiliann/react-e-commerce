@@ -19,7 +19,8 @@ export function Home() {
           
           <div className="home--sec">
             <h1>Welcome to Anarkan !</h1>
-            <h3>Let your dreams come true&nbsp;<BiSun className="color--sun"/></h3>
+            <h3>Let your dreams come true&nbsp;<BiSun className="color--sun"/>
+            &nbsp;<GiPalmTree className="color--palmer" /></h3>
           </div>
 
           <a href="./images/wall_beach1" target="_blank" className="beach--img">

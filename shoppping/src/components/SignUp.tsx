@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import "../styles.css";
-
+import "./styles.css";
 
 
 interface props {
@@ -22,27 +21,27 @@ class SignUp extends Component<props> {
         }
     };
 
-    fullNameChange = (e: Input.Event) => {
+    fullNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         e.preventDefault();
         this.setState({fullName: e.target.value});
     };
 
-    userNameChange = (e: Input.Event) => {
+    userNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         e.preventDefault();
         this.setState({userName: e.target.value});
     };
 
-    emailChange = (e: Input.Event) => {
+    emailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         e.preventDefault();
         this.setState({email: e.target.value});
     };
 
-    passwordChange = (e: Input.Event) => {
+    passwordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         e.preventDefault();
         this.setState({password: e.target.value});
     };
 
-    onSubmit = (e: Form.Event) => {
+    onSubmit = (e: React.FormEvent) => {
         e.preventDefault();
 
         const registered = {
