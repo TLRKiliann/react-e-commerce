@@ -187,26 +187,36 @@ body {
 .about--main {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
 }
 
 
-.section--about {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    width: 70%;
-    margin: auto;
-    padding: 40px;
-    top: 30%;
-    left: 14%;
-    right: 14%;
-    height: 620px;
+/*Some trouble here !!!*/
+.title--about {
+    text-align: left;
     border: 2px solid black;
-    background-color: rgba(0,0,255,0.2);
-    z-index: 2;
+}
 
+.reorder--frame {
+    position: fixed;
+    width: 60%;
+    height: 40vh;
+    padding: 20px;
+    border: 2px solid whitesmoke;
+    background-color: rgba(0,0,255,0.2);
+    border-radius: 15px;
+}
+
+.section--about {
+    font-family: var(--bs-font-one);
     color: whitesmoke;
+}
+
+.section--about p {
+    font-size: 1.4rem;
+
 }
 
 .img--about {
