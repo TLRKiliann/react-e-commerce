@@ -1,18 +1,14 @@
 import { Button, Container, Nav, Navbar as NavbarBs } from "react-bootstrap"
 import { NavLink } from "react-router-dom"
-//import '../utilities/shopping-cart-svgrepo-com.svg'
-import React, { useState } from "react";
 import { useShoppingCart } from "../context/ShoppingCartContext"
 import { useAuthLogin } from "../context/AuthContextProvider"
 
 
-export function Navbar() {
+export function Navbar({ children }) {
   const { openCart, cartQuantity } = useShoppingCart()
+  const { switchLogin, toggle } = useAuthLogin()
+  //const [switchLogin, setSwitchLogin] = useState(false)
 
-  const { turnLogin, setTurnLogin } = useAuthLogin()
-  const [switchLog, setSwitchLog] = useState<boolean>(false)
-
-  console.log(turnLogin)
   return (
     <NavbarBs className="bg-white shadow-sm mb-3">
       <Container>
@@ -36,10 +32,9 @@ export function Navbar() {
         </Nav>
 
 
-        {!switchLog ? (
+        {switchLogin ? (
           <Nav.Link
             to="/subscribe" as={NavLink}
-            onClick={() => setSwitchLog(switchLog)}
             style={{
               marginRight: "20px",
               width: "55px", 
@@ -60,8 +55,9 @@ export function Navbar() {
 
           ):(
 
-          <button
-            onClick={() => setSwitchLog(!switchLog)}
+          <Nav.Link
+            to="/subscribe" as={NavLink}
+            onClick={toggle}
             style={{
               marginRight: "20px",
               width: "55px", 
@@ -78,7 +74,7 @@ export function Navbar() {
             className="rounded-circle"
           >
             Logout
-          </button>
+          </Nav.Link>
         )}
 
 

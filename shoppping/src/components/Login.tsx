@@ -1,7 +1,7 @@
 import React, { Component, useState, useContext } from "react";
 import axios from "axios";
 import "./styles.css";
-import { useAuthLogin } from "../context/AuthProviderContext"
+import { useAuthLogin } from "../context/AuthContextProvider"
 
 
 type props = {
@@ -10,22 +10,22 @@ type props = {
     success: boolean
 }
 
-const Login = (props) => {
+const Login = ({ props, children }) => {
 
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [success, setSuccess] = useState(false)
-    const [post, setPost] = React.useState(null);
-    const [errMsg, setErrMsg] = React.useState(null);
+    const [post, setPost] = React.useState(null)
+    const [errMsg, setErrMsg] = React.useState(null)
+
+    const { toggle, switchLogin } = useAuthLogin();
 
     const emailLogin = (e: React.ChangeEvent<HTMLInputElement>) => {
-        e.preventDefault();
-        setEmail(e.target.value);
+        setEmail(e.target.value)
     };
 
     const passwordLogin = (e: React.ChangeEvent<HTMLInputElement>) => {
-        e.preventDefault();
-        setPassword(e.target.value);
+        setPassword(e.target.value)
     };
 
     const onHandleSubmit = async (e: React.FormEvent) => {
@@ -50,7 +50,6 @@ const Login = (props) => {
         setSuccess(true)
     };
 
-
     return (
         <form className="form--logsign" onSubmit={(e) => onHandleSubmit(e)}>
             <h1>Login</h1>
@@ -64,13 +63,17 @@ const Login = (props) => {
             <button type="submit" className="btn--submit">
                 Login
             </button>
-            {!post && errMsg ? (
-                <h5 style={{marginTop: "10px", padding: "5px 10px", 
-                    background: "lightpink", borderRadius: "15px", color: "green"}}
-                >
-                    Success Login !
-                </h5>
-            ) : !post && !errMsg && (
+            {!post && errMsg && switchLogin ? (
+                <div>
+                    <h5 style={{marginTop: "10px", padding: "5px 10px", 
+                        background: "lightpink", borderRadius: "15px", color: "green"}}
+                    >
+                        {toggle(!switchLogin)}
+                        Success Login !
+                    </h5>
+                </div>
+
+                ) : !post && !errMsg && (
 
                 <h5 
                     style={{marginTop: "10px", padding: "5px 10px", 

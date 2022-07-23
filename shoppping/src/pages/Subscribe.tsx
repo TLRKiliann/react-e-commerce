@@ -19,7 +19,8 @@ export const Subscribe = () => {
         setLog(log => log = false);
     };
     const turnLogin = useAuthLogin();
-    console.log(turnLogin)
+
+    console.log("TurnLogin state", turnLogin)
     return (
         <div className="main--div">
 
@@ -38,7 +39,7 @@ export const Subscribe = () => {
             <div className="log--sign">
 
                 {!log && !sign &&
-                    <div style={{textAlign: "center", marginTop: "15%"}}>
+                    <div style={{ textAlign: "center", marginTop: "15%" }}>
                         <h1>Wellcome !</h1>
                         <h3>Choose Login or SignUp.</h3>
                     </div>}
