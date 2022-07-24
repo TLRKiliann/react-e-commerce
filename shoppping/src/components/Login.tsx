@@ -37,17 +37,12 @@ const Login = ({ props, children }) => {
             password: password
         }
 
-        axios.post("http://localhost:4000/app/login", logedIn)
-            .then((res) => console.log(res.data))
+        const res = await axios.post("http://localhost:4000/app/login", logedIn)
             .then((res) => {
-                setPost(res.data);
-                }).catch(errMsg => {
-                    setErrMsg(errMsg);
-                })
-
-        setEmail("") 
-        setPassword("")
-        setSuccess(true)
+                toggle(!switchLogin)
+                console.log(res.data)
+            })
+            .catch((err) => console.log("error"))
     };
 
     return (
@@ -63,17 +58,15 @@ const Login = ({ props, children }) => {
             <button type="submit" className="btn--submit">
                 Login
             </button>
-            {!post && errMsg && switchLogin ? (
-                <div>
-                    <h5 style={{marginTop: "10px", padding: "5px 10px", 
-                        background: "lightpink", borderRadius: "15px", color: "green"}}
-                    >
-                        {toggle(!switchLogin)}
-                        Success Login !
-                    </h5>
-                </div>
 
-                ) : !post && !errMsg && (
+            {!switchLogin ? (
+                <h5 style={{marginTop: "10px", padding: "5px 10px", 
+                    background: "lightpink", borderRadius: "15px", color: "green"}}
+                >
+                    Success Login !
+                </h5>
+
+                ) : (
 
                 <h5 
                     style={{marginTop: "10px", padding: "5px 10px", 
@@ -81,6 +74,7 @@ const Login = ({ props, children }) => {
                 >
                     No logged in !
                 </h5>
+
             )}
         </form>
     )
@@ -117,4 +111,3 @@ export default Login;
                 setErrorMsg("Login failed")
             }
         }*/
-
