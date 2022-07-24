@@ -3,19 +3,26 @@ import "./styles.css"
 
 export function About() {
   return (
-    <div className="about--main">
+    <div>
+
       <div>
         <h1 className="title--about">About</h1>
       </div>
 
-      <img className="img--about" src={beach} alt="beach" />
-      
-      <div className="reorder--frame">
-        <section className="section--about">
-          <h3>Our mission :</h3>
-          <p>Youpy ! My first e-commerce !!!</p>
-        </section>
+
+      <div className="about--main">
+
+        <img className="img--about" src={beach} alt="beach" />
+        
+        <div className="reorder--frame">
+          <section className="section--about">
+            <h3>Our mission :</h3>
+            <p>Youpy ! My first e-commerce !!!</p>
+          </section>
+        </div>
+
       </div>
+
     </div>
   )
 }

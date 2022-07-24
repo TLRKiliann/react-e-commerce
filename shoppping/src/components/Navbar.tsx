@@ -45,10 +45,11 @@ export function Navbar({ children }) {
               justifyContent: "center",
               fontSize: "0.8rem",
               color: "black", 
-              border: "1px solid grey"
+              border: "1px solid grey",
+              borderRadius: "50%"
             }}
             variant="outline-primary"
-            className="rounded-circle"
+            className="rounded--style"
           >
             Login
           </Nav.Link>
@@ -68,10 +69,11 @@ export function Navbar({ children }) {
               justifyContent: "center",
               fontSize: "0.8rem",
               color: "black", 
-              border: "1px solid grey"
+              border: "1px solid grey",
+              borderRadius: "50%"
             }}
             variant="outline-primary"
-            className="rounded-circle"
+            className="rounded--style"
           >
             Logout
           </Nav.Link>

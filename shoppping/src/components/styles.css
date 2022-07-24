@@ -1,7 +1,7 @@
 :root {
     --bs-font-one: One-serif;
     --bs-font-ch:  Helvetica;
-    --bs-light: #ecdecd;;
+    --bs-light: #ecdecd;
     --bs-grey: grey;
     --bs-white: #ffffff;
     --bs-orange: orange;
@@ -103,4 +103,12 @@ body {
 
 #btn--login {
     margin-right: 10px;
+}
+
+.rounded--style {
+    background: var(--bs-light);
+}
+
+.rounded--style:hover {
+    background: orange;
 }
