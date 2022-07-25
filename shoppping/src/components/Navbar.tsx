@@ -6,7 +6,7 @@ import { useAuthLogin } from "../context/AuthContextProvider"
 
 export function Navbar({ children }) {
   const { openCart, cartQuantity } = useShoppingCart()
-  const { switchLogin, toggle } = useAuthLogin()
+  const { switchLogin, toggle, email, eraseAll } = useAuthLogin()
   //const [switchLogin, setSwitchLogin] = useState(false)
 
   return (
@@ -31,6 +31,29 @@ export function Navbar({ children }) {
           </Nav.Link>
         </Nav>
 
+        {email ? (
+          <span 
+            style={{
+              marginRight: "10px",
+              padding: "10px",
+              background: "steelblue",
+              borderRadius: "15px",
+              color: "white"
+            }}
+          >{
+            email}
+          </span>
+          ):(
+          <span
+            style={{
+              marginRight: "10px",
+              padding: "10px",
+              background: "navy",
+              borderRadius: "15px",
+              color: "white"
+            }}> &#8614; </span>
+
+          )}
 
         {switchLogin ? (
           <Nav.Link
@@ -58,7 +81,7 @@ export function Navbar({ children }) {
 
           <Nav.Link
             to="/subscribe" as={NavLink}
-            onClick={toggle}
+            onClick={{toggle, eraseAll}}
             style={{
               marginRight: "20px",
               width: "55px", 

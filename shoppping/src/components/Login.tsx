@@ -1,4 +1,4 @@
-import React, { Component, useState, useContext } from "react";
+import React, { Component, useState, useEffect, useContext } from "react";
 import axios from "axios";
 import "./styles.css";
 import { useAuthLogin } from "../context/AuthContextProvider"
@@ -12,13 +12,25 @@ type props = {
 
 const Login = ({ props, children }) => {
 
-    const [email, setEmail] = useState("")
+    //const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [success, setSuccess] = useState(false)
     const [post, setPost] = React.useState(null)
     const [errMsg, setErrMsg] = React.useState(null)
 
-    const { toggle, switchLogin } = useAuthLogin();
+    const { toggle, switchLogin, email, setEmail } = useAuthLogin();
+
+    useEffect(() => {
+        const storageEmail = JSON.parse(localStorage.getItem('Email'));
+        setEmail(storageEmail)
+        const storePass = JSON.parse(localStorage.getItem('Passwd'));
+        setPassword(storePass)
+    }, []);
+
+    useEffect(() => {
+        localStorage.setItem('Email', JSON.stringify(email));
+        localStorage.setItem('Passwd', JSON.stringify(password));
+    }, [email, password]);
 
     const emailLogin = (e: React.ChangeEvent<HTMLInputElement>) => {
         setEmail(e.target.value)
@@ -43,6 +55,8 @@ const Login = ({ props, children }) => {
                 console.log(res.data)
             })
             .catch((err) => console.log("error"))
+
+        setPassword("")
     };
 
     return (

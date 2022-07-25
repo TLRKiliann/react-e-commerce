@@ -14,8 +14,12 @@ type Props = {
 
 //We need context for btn add and minus in store
 type AuthContext = {
+    email: string
+    setEmail: string
     switchLogin: boolean
+    setSwitchLogin: boolean
     toggle: () => void
+    eraseAll: () => void
 }
 
 //createContext by convention
@@ -28,11 +32,19 @@ export function useAuthLogin() {
 export function AuthContextProvider({ children }: Props) {
 
     const [switchLogin, setSwitchLogin] = useState(true)
-
+    const [email, setEmail] = useState("")
 
     function toggle() {
         setSwitchLogin(!switchLogin)
+        localStorage.removeItem('Passwd')
+        localStorage.removeItem('Email')
+        localStorage.removeItem('Shopping-cart')
     }
+
+    function eraseAll() {
+        setEmail("")
+    }
+
     /*const turnLogin = () => setSwitchLogin(true)
     const setTurnLogin = () => setSwitchLogin(false)*/
 
@@ -42,8 +54,12 @@ export function AuthContextProvider({ children }: Props) {
 
     return (
         <AuthContext.Provider value={{
+            email,
+            setEmail,
             switchLogin,
-            toggle
+            setSwitchLogin,
+            toggle,
+            eraseAll
             }}
         >
             {children}
