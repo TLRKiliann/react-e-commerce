@@ -22,6 +22,7 @@ router.post('/login', async (req, res) => {
     )
 
     if (isPasswordValid) {
+        console.log("Login routes ok !");
         return res.json({ status: 'ok', loginUser })
     } else {
         return res.json({ status: 'error', loginUser: false })

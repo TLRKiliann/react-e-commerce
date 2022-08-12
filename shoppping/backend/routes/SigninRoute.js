@@ -24,7 +24,7 @@ router.post("/signup", async (req, res) => {
     .catch(error => {
         res.json(error)
     })
-    console.log("signup routes ok !");
+    console.log("Signup routes ok !");
 });
 
 module.exports = router;
