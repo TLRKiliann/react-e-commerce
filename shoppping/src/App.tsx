@@ -20,7 +20,6 @@ function App() {
             <Route path="/store" element={<Store />} />
             <Route path="/about" element={<About />} />
             <Route path="/subscribe" element={<Subscribe />} />
-            <Route path="/subscribe" element={<Subscribe />} />
           </Routes>
         </Container >
       </AuthContextProvider>
