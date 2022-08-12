@@ -40,15 +40,15 @@ export function Navbar({ children }) {
               borderRadius: "15px",
               color: "white"
             }}
-          >{
-            email}
+          >
+            {email}
           </span>
           ):(
           <span
             style={{
               marginRight: "10px",
               padding: "10px",
-              background: "navy",
+              background: "red",
               borderRadius: "15px",
               color: "white"
             }}> &#8614; </span>
