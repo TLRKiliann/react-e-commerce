@@ -1,5 +1,4 @@
-# React-TypeScript e-commerce shopping-cart
-
+# React-TypeScript e-commerce shopping-cart & login (sign-up & sign-in)
 
 ## Install
 
@@ -19,21 +18,35 @@ npm install react-router-dom
 
 npm install bootstrap react-bootstrap
 
+npm install axios
+
 ---
+
+mkdir backend
+
+cd backend
+
+npm init
+
+npm install
+
+npm install express node cors dotenv bcrypt mongoose nodemon
+
+npm start
 
 ## Run
 
-Client :
+Client (Front) :
 
 > npm run dev
 
-Server :
+Server (Backend) :
 
 > npm start
 
 ---
 
-## Structure :
+## Structure of routing :
 
 **BACKEND**
 
