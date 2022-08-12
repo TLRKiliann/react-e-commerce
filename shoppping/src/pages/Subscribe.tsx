@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import Login from "../components/Login"
 import SignUp from "../components/SignUp"
 import { useAuthLogin } from "../context/AuthContextProvider"
@@ -8,6 +8,11 @@ import "./styles.css"
 export const Subscribe = () => {
     const [log, setLog] = useState(false);
     const [sign, setSign] = useState(false);
+
+    useEffect(() => {
+        localStorage.removeItem('Email')
+        localStorage.removeItem('Passwd')
+    },[])
 
     const handleLogin = () => {
         setLog(prevLog => !prevLog.log);
