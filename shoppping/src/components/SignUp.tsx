@@ -92,7 +92,7 @@ class SignUp extends Component<props> {
 export default SignUp;
 
 /*
-        Not required => every action binded by event (e)
+        No ".bind(this)" required => every action binded by event (e)
         this.fullNameChange = this.fullNameChange.bind(this);
         this.userNameChange = this.userNameChange.bind(this);
         this.emailChange = this.emailChange.bind(this);
