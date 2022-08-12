@@ -31,26 +31,16 @@ export function useAuthLogin() {
 
 export function AuthContextProvider({ children }: Props) {
 
-    const [switchLogin, setSwitchLogin] = useState(true)
-    const [email, setEmail] = useState("")
+    const [switchLogin, setSwitchLogin] = useState<boolean>(true)
+    const [email, setEmail] = useState<string>("")
 
-    function toggle() {
+    const toggle = () => {
         setSwitchLogin(!switchLogin)
-        localStorage.removeItem('Passwd')
-        localStorage.removeItem('Email')
-        localStorage.removeItem('Shopping-cart')
     }
 
-    function eraseAll() {
+    const eraseAll = () => {
         setEmail("")
     }
-
-    /*const turnLogin = () => setSwitchLogin(true)
-    const setTurnLogin = () => setSwitchLogin(false)*/
-
-    /* 
-    const { email, password } = useLocalStorage<Array<Login>>(
-        "login", []);*/
 
     return (
         <AuthContext.Provider value={{
