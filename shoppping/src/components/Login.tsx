@@ -18,6 +18,8 @@ const Login = ({ props, children }) => {
     const [post, setPost] = React.useState(null)
     const [errMsg, setErrMsg] = React.useState(null)
 
+    console.log("It's my password", password)
+
     const { toggle, switchLogin, email, setEmail } = useAuthLogin();
 
     useEffect(() => {
@@ -75,7 +77,7 @@ const Login = ({ props, children }) => {
 
             {!switchLogin ? (
                 <h5 style={{marginTop: "10px", padding: "5px 10px", 
-                    background: "lightpink", borderRadius: "15px", color: "green"}}
+                    background: "green", borderRadius: "15px", color: "white"}}
                 >
                     Success Login !
                 </h5>
