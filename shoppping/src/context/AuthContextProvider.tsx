@@ -1,18 +1,10 @@
 import { createContext, ReactNode, useContext, useState } from "react"
 import axios from "axios"
-//import Subscribe from "../components/Subscribe"
-//import Login from "../components/Login"
-//import SignUp from "../components/SignUp"
-//import { useLocalStorage } from "../hooks/useLocalStorage"
 
-
-//ReactNode the type that you give to change 
-//property into children
 type Props = {
     children: ReactNode
 }
 
-//We need context for btn add and minus in store
 type AuthContext = {
     email: string
     setEmail: string
@@ -22,7 +14,6 @@ type AuthContext = {
     eraseAll: () => void
 }
 
-//createContext by convention
 const AuthContext = createContext({} as AuthContext);
 
 export function useAuthLogin() {

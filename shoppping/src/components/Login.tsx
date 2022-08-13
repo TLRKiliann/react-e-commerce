@@ -12,7 +12,6 @@ type props = {
 
 const Login = ({ props, children }) => {
 
-    //const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [success, setSuccess] = useState(false)
     const [post, setPost] = React.useState(null)
@@ -44,8 +43,7 @@ const Login = ({ props, children }) => {
 
     const onHandleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        setSuccess(false) 
-
+        setSuccess(false)
         const logedIn = {
             email: email,
             password: password
@@ -54,6 +52,7 @@ const Login = ({ props, children }) => {
         const res = await axios.post("http://localhost:4000/app/login", logedIn)
             .then((res) => {
                 toggle()
+                setSuccess(true)
                 console.log(res.data)
             })
             .catch((err) => console.log("error"))
@@ -75,7 +74,7 @@ const Login = ({ props, children }) => {
                 Login
             </button>
 
-            {!switchLogin ? (
+            {!switchLogin && success ? (
                 <h5 style={{marginTop: "10px", padding: "5px 10px", 
                     background: "green", borderRadius: "15px", color: "white"}}
                 >

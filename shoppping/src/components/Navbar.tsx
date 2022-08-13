@@ -7,7 +7,7 @@ import { useAuthLogin } from "../context/AuthContextProvider"
 export function Navbar({ children }) {
   const { openCart, cartQuantity } = useShoppingCart()
   const { switchLogin, email, toggle, eraseAll } = useAuthLogin()
-  //const [switchLogin, setSwitchLogin] = useState(false)
+
   const handleChange = () => {
     toggle()
     eraseAll()

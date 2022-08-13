@@ -5,7 +5,6 @@ const router = express.Router();
 const loginTemplateCopy = require("../models/SignUpModels");
 const bcrypt = require("bcrypt");
 
-
 router.post('/login', async (req, res) => {
 
     const loginUser = await loginTemplateCopy.findOne({
