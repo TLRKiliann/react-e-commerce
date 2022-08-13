@@ -53,7 +53,7 @@ const Login = ({ props, children }) => {
 
         const res = await axios.post("http://localhost:4000/app/login", logedIn)
             .then((res) => {
-                toggle(!switchLogin)
+                toggle()
                 console.log(res.data)
             })
             .catch((err) => console.log("error"))

@@ -6,8 +6,12 @@ import { useAuthLogin } from "../context/AuthContextProvider"
 
 export function Navbar({ children }) {
   const { openCart, cartQuantity } = useShoppingCart()
-  const { switchLogin, toggle, email, eraseAll } = useAuthLogin()
+  const { switchLogin, email, toggle, eraseAll } = useAuthLogin()
   //const [switchLogin, setSwitchLogin] = useState(false)
+  const handleChange = () => {
+    toggle()
+    eraseAll()
+  }
 
   return (
     <NavbarBs className="bg-white shadow-sm mb-3">
@@ -43,7 +47,9 @@ export function Navbar({ children }) {
           >
             {email}
           </span>
-          ):(
+
+          ) : (
+          
           <span
             style={{
               marginRight: "10px",
@@ -52,7 +58,6 @@ export function Navbar({ children }) {
               borderRadius: "15px",
               color: "white"
             }}> &#8614; </span>
-
           )}
 
         {switchLogin ? (
@@ -77,11 +82,11 @@ export function Navbar({ children }) {
             Login
           </Nav.Link>
 
-          ):(
-
+          ) : (
+          
           <Nav.Link
             to="/subscribe" as={NavLink}
-            onClick={{toggle, eraseAll}}
+            onClick={() => handleChange()}
             style={{
               marginRight: "20px",
               width: "55px", 
@@ -101,7 +106,6 @@ export function Navbar({ children }) {
             Logout
           </Nav.Link>
         )}
-
 
         {cartQuantity > 0 && (
           <Button
