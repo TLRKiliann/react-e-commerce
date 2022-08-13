@@ -36,6 +36,7 @@ export function AuthContextProvider({ children }: Props) {
 
     const toggle = () => {
         setSwitchLogin(!switchLogin)
+        setEmail(email)
     }
 
     const eraseAll = () => {

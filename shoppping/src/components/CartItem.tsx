@@ -29,7 +29,7 @@ export const CartItem = ({id, quantity}: CartItemProps) => {
                     {quantity > 1 && (
                         <span 
                             className="text-muted"
-                            style={{fontSize: ".65rem"}}>x{quantity}
+                            style={{fontSize: "0.5rem"}}>x{quantity}
                         </span>
                     )}
                 </div>

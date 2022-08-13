@@ -23,10 +23,12 @@ export const Subscribe = () => {
         setSign(prevSign => !prevSign.sign);
         setLog(log => log = false);
     };
-    const turnLogin = useAuthLogin();
 
+    const turnLogin = useAuthLogin();
     console.log("TurnLogin state", turnLogin)
+
     return (
+        
         <div className="main--div">
 
             <div className="btn--bloc">
