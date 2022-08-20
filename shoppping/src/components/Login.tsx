@@ -14,12 +14,12 @@ const Login = ({ props, children }) => {
 
     const [password, setPassword] = useState("")
     const [success, setSuccess] = useState(false)
-    const [post, setPost] = React.useState(null)
-    const [errMsg, setErrMsg] = React.useState(null)
+    const [post, setPost] = useState(null)
+    const [errMsg, setErrMsg] = useState(null)
 
-    console.log("It's my password", password)
+    //console.log("It's my password", password)
 
-    const { toggle, switchLogin, email, setEmail } = useAuthLogin();
+    const { toggle, switchLogin, email, setEmail, setUsrEmail } = useAuthLogin();
 
     useEffect(() => {
         const storageEmail = JSON.parse(localStorage.getItem('Email'));
@@ -44,6 +44,8 @@ const Login = ({ props, children }) => {
     const onHandleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setSuccess(false)
+        setUsrEmail(email)
+
         const logedIn = {
             email: email,
             password: password
@@ -52,12 +54,12 @@ const Login = ({ props, children }) => {
         const res = await axios.post("http://localhost:4000/app/login", logedIn)
             .then((res) => {
                 toggle()
+                setEmail("")
+                setPassword("")
                 setSuccess(true)
-                console.log(res.data)
+                //console.log(res.data)
             })
             .catch((err) => console.log("error"))
-
-        setPassword("")
     };
 
     return (
@@ -97,8 +99,14 @@ const Login = ({ props, children }) => {
 
 export default Login;
 
+/*
+	import axios from 'axios';
+	export default axios.create({baseUrl: http://localhost:3500})
+	
+	import axios from './api/axios';
 
-        /*try {
+
+try {
             const response = await axios.post("http://localhost:4000/app/login", 
                 JSON.stringify({logedIn}),
                 {
@@ -125,4 +133,5 @@ export default Login;
             } else {
                 setErrorMsg("Login failed")
             }
-        }*/
+        }
+*/

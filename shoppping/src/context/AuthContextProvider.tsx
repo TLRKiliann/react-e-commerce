@@ -6,6 +6,8 @@ type Props = {
 }
 
 type AuthContext = {
+    usrEmail: string
+    setUsrEmail: string
     email: string
     setEmail: string
     switchLogin: boolean
@@ -24,18 +26,23 @@ export function AuthContextProvider({ children }: Props) {
 
     const [switchLogin, setSwitchLogin] = useState<boolean>(true)
     const [email, setEmail] = useState<string>("")
+    const [usrEmail, setUsrEmail] = useState<string>("")
 
     const toggle = () => {
         setSwitchLogin(!switchLogin)
-        setEmail(email)
+        //setUsrEmail(email)
     }
 
     const eraseAll = () => {
-        setEmail("")
+        setUsrEmail("")
     }
+
+    console.log("my setEmail", setEmail)
 
     return (
         <AuthContext.Provider value={{
+            usrEmail,
+            setUsrEmail,
             email,
             setEmail,
             switchLogin,

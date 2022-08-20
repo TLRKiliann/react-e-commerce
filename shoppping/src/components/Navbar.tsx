@@ -6,7 +6,7 @@ import { useAuthLogin } from "../context/AuthContextProvider"
 
 export function Navbar({ children }) {
   const { openCart, cartQuantity } = useShoppingCart()
-  const { switchLogin, email, toggle, eraseAll } = useAuthLogin()
+  const { switchLogin, usrEmail, toggle, eraseAll } = useAuthLogin()
 
   const handleChange = () => {
     toggle()
@@ -35,7 +35,7 @@ export function Navbar({ children }) {
           </Nav.Link>
         </Nav>
 
-        {email ? (
+        {usrEmail ? (
           <span 
             style={{
               marginRight: "10px",
@@ -45,7 +45,7 @@ export function Navbar({ children }) {
               color: "white"
             }}
           >
-            {email}
+            {usrEmail}
           </span>
 
           ) : (

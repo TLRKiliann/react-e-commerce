@@ -15,17 +15,17 @@ export const Subscribe = () => {
     },[])
 
     const handleLogin = () => {
-        setLog(prevLog => !prevLog.log);
-        setSign(sign => sign = false);
+        setLog(prevLog => !prevLog.log)
+        setSign(false)
     };
 
     const handleSignUp = () => {
-        setSign(prevSign => !prevSign.sign);
-        setLog(log => log = false);
+        setSign(prevSign => !prevSign.sign)
+        setLog(false)
     };
 
-    const turnLogin = useAuthLogin();
-    console.log("TurnLogin state", turnLogin)
+    //const turnLogin = useAuthLogin();
+    //console.log("TurnLogin state", turnLogin)
 
     return (
         
